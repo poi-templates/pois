@@ -1,0 +1,4 @@
+.poi_defaults
+init.gemspec
+bin/**/*
+lib/**/*.rb

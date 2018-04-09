@@ -1,0 +1,54 @@
+.poi_defaults 11
+{
+    "project": {
+        "name": "init",
+        "summary": "Just another gem project",
+        "homepage": "https://github.com/poi-templates/ruby-gem-init",
+        "description": "Just another gem project",
+        "authors": "Kimmy Leo",
+        "email": "kenpusney@gmail.com",
+        "exec": "exec"
+    }
+}
+
+init.gemspec 14
+spec = Gem::Specification.new do |s|
+  s.name              = "{{ project.name }}"
+  s.version           = "0.0.1"
+  s.authors           = "{{ project.authors }}"
+  s.email             = "{{ project.email }}"
+  s.homepage          = "{{ project.homepage }}"
+  s.summary           = "{{ project.summary }}"
+  s.description       = "{{ project.description }}"
+  s.platform          = Gem::Platform::RUBY
+  s.has_rdoc          = true
+  s.test_files        = Dir.glob "test/**/*_test.rb"
+  s.files             = `git ls-files`.split("\n").reject {|f| f =~ /^\./}
+  s.executables       = ["{{ project.exec }}"]
+end
+
+bin/exec 6
+#!/usr/bin/env ruby
+require 'init'
+
+app = Init::App.new
+
+app.run
+
+lib/init/app.rb 8
+
+module Init
+    class App
+        def run
+            puts "Hello world!"
+        end
+    end
+end
+
+lib/init.rb 4
+require 'init/app'
+
+module Init
+end
+
+.

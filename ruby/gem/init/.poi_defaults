@@ -1,0 +1,11 @@
+{
+    "project": {
+        "name": "init",
+        "summary": "Just another gem project",
+        "homepage": "https://github.com/poi-templates/ruby-gem-init",
+        "description": "Just another gem project",
+        "authors": "Kimmy Leo",
+        "email": "kenpusney@gmail.com",
+        "exec": "exec"
+    }
+}
